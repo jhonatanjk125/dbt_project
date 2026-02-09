@@ -22,12 +22,12 @@ models:
         data_tests:
           - not_null
       - name: satisfaction_score
-        description: "CSAT rating 1-5. Null for open tickets."
         data_tests:
           - accepted_values:
-              values: [1, 2, 3, 4, 5]
               config:
                 where: "satisfaction_score is not null"
+              arguments:
+                values: [1, 2, 3, 4, 5]
 
   - name: dim_customers
     description: >
@@ -73,6 +73,10 @@ exposures:
     description: >
       Executive KPI dashboard showing support team performance, SLA compliance,
       customer health scores, and ticket volume trends.
+    maturity: high
+    owner: 
+      name: "Jhonnatan Gutierrez"
+      email: "[EMAIL_ADDRESS]"
     depends_on:
       - ref('fct_tickets')
       - ref('dim_customers')

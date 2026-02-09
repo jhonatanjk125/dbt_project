@@ -14,31 +14,36 @@ models:
         data_tests:
           - not_null
           - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
       - name: agent_id
         description: "FK to the assigned support agent."
         data_tests:
           - relationships:
-              to: ref('stg_agents')
-              field: agent_id
+              arguments:
+                to: ref('stg_agents')
+                field: agent_id
       - name: channel
         description: "Submission channel: email, chat, or phone."
         data_tests:
           - accepted_values:
-              values: ['email', 'chat', 'phone']
+              arguments:
+                values: ['email', 'chat', 'phone']
       - name: priority
         description: "Ticket priority: critical, high, medium, or low."
         data_tests:
           - accepted_values:
-              values: ['critical', 'high', 'medium', 'low']
+              arguments:
+                values: ['critical', 'high', 'medium', 'low']
       - name: category
         description: "Issue category (e.g., billing_dispute, technical_issue)."
       - name: status
         description: "Current status: open or resolved."
         data_tests:
           - accepted_values:
-              values: ['open', 'resolved']
+              arguments:
+                values: ['open', 'resolved']
       - name: created_at
         description: "Timestamp when the ticket was created."
         data_tests:
@@ -62,7 +67,8 @@ models:
         description: "Subscription tier: starter, professional, or enterprise."
         data_tests:
           - accepted_values:
-              values: ['starter', 'professional', 'enterprise']
+              arguments:
+                values: ['starter', 'professional', 'enterprise']
       - name: monthly_revenue
         description: "Monthly recurring revenue from this customer."
 

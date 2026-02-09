@@ -35,3 +35,7 @@ Thumbs.db
 
 # Documentation builds
 site/
+
+# DuckDB
+*.duckdb
+*.duckdb.wal

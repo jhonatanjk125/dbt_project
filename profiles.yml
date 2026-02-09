@@ -1,0 +1,13 @@
+support_analytics:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "support_analytics.duckdb"
+      schema: main
+    
+    motherduck:
+      type: duckdb
+      path: "md:support_analytics"
+      schema: main
+      token: "{{ env_var('MOTHERDUCK_TOKEN') }}"

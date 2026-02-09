@@ -20,7 +20,6 @@ __pycache__/
 # Environment variables
 .env
 .env.local
-profiles.yml
 
 # OS files
 .DS_Store

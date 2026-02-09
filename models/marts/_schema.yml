@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: fct_tickets
+    description: >
+      Fact table: one row per support ticket, fully enriched with customer details,
+      agent information, SLA performance, and satisfaction scores. Primary table for
+      ticket-level analytics and operational reporting.
+    columns:
+      - name: ticket_key
+        description: "Surrogate key for the ticket fact record."
+        data_tests:
+          - unique
+          - not_null
+      - name: ticket_id
+        description: "Natural key — the original ticket identifier."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "FK to the customer."
+        data_tests:
+          - not_null
+      - name: satisfaction_score
+        description: "CSAT rating 1-5. Null for open tickets."
+        data_tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+              config:
+                where: "satisfaction_score is not null"
+
+  - name: dim_customers
+    description: >
+      Customer dimension with support health profile. Includes computed
+      support_health_score (0-100) combining resolution rate, satisfaction,
+      and SLA adherence. Used for account risk assessment and CSM prioritization.
+    columns:
+      - name: customer_key
+        description: "Surrogate key for the customer dimension."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Natural key."
+        data_tests:
+          - unique
+          - not_null
+      - name: plan_tier
+        description: "Subscription tier."
+      - name: support_health_score
+        description: >
+          Composite score (0-100) based on resolution rate (40%),
+          CSAT (30%), and SLA adherence (30%). Null if customer has no tickets.
+
+  - name: fct_support_kpis
+    description: >
+      Executive KPI summary for the support organization. Aggregated metrics
+      including resolution rate, average response times, CSAT, and SLA
+      compliance rates. Designed for the executive dashboard.
+    columns:
+      - name: resolution_rate
+        description: "Fraction of tickets resolved."
+      - name: avg_csat_score
+        description: "Average customer satisfaction score across all rated tickets."
+      - name: first_response_sla_met_rate
+        description: "Fraction of tickets where first response met the SLA."
+      - name: resolution_sla_met_rate
+        description: "Fraction of resolved tickets where resolution met the SLA."
+
+exposures:
+  - name: executive_support_dashboard
+    type: dashboard
+    description: >
+      Executive KPI dashboard showing support team performance, SLA compliance,
+      customer health scores, and ticket volume trends.
+    depends_on:
+      - ref('fct_tickets')
+      - ref('dim_customers')
+      - ref('fct_support_kpis')

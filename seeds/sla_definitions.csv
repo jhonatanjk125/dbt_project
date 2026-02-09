@@ -1,0 +1,5 @@
+priority,first_response_sla_minutes,resolution_sla_minutes,description
+critical,10,180,Service outage or complete loss of functionality
+high,30,480,Major feature broken affecting business operations
+medium,60,1440,Moderate issue with available workaround
+low,480,2880,Minor issue or general inquiry

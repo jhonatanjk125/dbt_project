@@ -1,0 +1,63 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data loaded via dbt seed."
+    schema: main_raw
+    tables:
+      - name: raw_tickets
+        description: "Support tickets submitted by customers across all channels."
+        columns:
+          - name: ticket_id
+            description: "Unique identifier for each support ticket."
+            data_tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: "Foreign key to the customer who opened the ticket."
+            data_tests:
+              - not_null
+          - name: agent_id
+            description: "Foreign key to the agent assigned to the ticket."
+          - name: channel
+            description: "Channel through which the ticket was submitted."
+            data_tests:
+              - accepted_values:
+                  values: ['email', 'chat', 'phone']
+          - name: priority
+            description: "Ticket priority level."
+            data_tests:
+              - accepted_values:
+                  values: ['critical', 'high', 'medium', 'low']
+          - name: status
+            description: "Current ticket status."
+            data_tests:
+              - accepted_values:
+                  values: ['open', 'resolved']
+
+      - name: raw_customers
+        description: "Customer accounts with plan and revenue information."
+        columns:
+          - name: customer_id
+            description: "Unique customer identifier."
+            data_tests:
+              - unique
+              - not_null
+
+      - name: raw_agents
+        description: "Support agents and their team/shift assignments."
+        columns:
+          - name: agent_id
+            description: "Unique agent identifier."
+            data_tests:
+              - unique
+              - not_null
+
+      - name: sla_definitions
+        description: "SLA targets per priority level (first response and resolution times)."
+        columns:
+          - name: priority
+            description: "Priority level that maps to ticket priority."
+            data_tests:
+              - unique
+              - not_null

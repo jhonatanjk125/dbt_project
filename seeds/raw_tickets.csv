@@ -1,0 +1,26 @@
+ticket_id,customer_id,agent_id,channel,priority,category,status,created_at,first_response_at,resolved_at,satisfaction_score
+TK-1001,C-201,A-10,email,high,billing_dispute,resolved,2024-11-01 09:15:00,2024-11-01 09:42:00,2024-11-01 14:30:00,5
+TK-1002,C-202,A-11,chat,medium,technical_issue,resolved,2024-11-01 10:05:00,2024-11-01 10:08:00,2024-11-01 11:20:00,4
+TK-1003,C-203,A-12,phone,critical,service_outage,resolved,2024-11-01 11:30:00,2024-11-01 11:33:00,2024-11-01 13:00:00,3
+TK-1004,C-204,A-10,email,low,general_inquiry,resolved,2024-11-01 14:00:00,2024-11-01 16:45:00,2024-11-02 09:10:00,4
+TK-1005,C-205,A-13,chat,high,account_access,resolved,2024-11-02 08:20:00,2024-11-02 08:25:00,2024-11-02 09:15:00,5
+TK-1006,C-201,A-11,email,medium,billing_dispute,resolved,2024-11-02 10:00:00,2024-11-02 10:35:00,2024-11-02 15:00:00,3
+TK-1007,C-206,A-14,phone,critical,service_outage,resolved,2024-11-03 02:10:00,2024-11-03 02:15:00,2024-11-03 04:30:00,4
+TK-1008,C-207,A-12,chat,medium,technical_issue,resolved,2024-11-03 09:45:00,2024-11-03 09:48:00,2024-11-03 12:00:00,5
+TK-1009,C-208,A-10,email,high,billing_dispute,resolved,2024-11-04 08:00:00,2024-11-04 08:50:00,2024-11-04 16:00:00,2
+TK-1010,C-209,A-13,phone,low,general_inquiry,resolved,2024-11-04 11:30:00,2024-11-04 11:35:00,2024-11-04 12:00:00,5
+TK-1011,C-210,A-14,chat,medium,account_access,resolved,2024-11-05 09:00:00,2024-11-05 09:04:00,2024-11-05 10:30:00,4
+TK-1012,C-203,A-11,email,critical,service_outage,resolved,2024-11-05 14:20:00,2024-11-05 14:28:00,2024-11-05 18:45:00,3
+TK-1013,C-211,A-10,chat,high,technical_issue,open,2024-11-06 08:30:00,2024-11-06 08:38:00,,
+TK-1014,C-212,A-12,phone,medium,billing_dispute,resolved,2024-11-06 10:00:00,2024-11-06 10:05:00,2024-11-06 13:30:00,4
+TK-1015,C-205,A-13,email,low,general_inquiry,resolved,2024-11-06 15:00:00,2024-11-07 09:10:00,2024-11-07 09:30:00,3
+TK-1016,C-213,A-14,chat,critical,service_outage,open,2024-11-07 03:45:00,2024-11-07 03:50:00,,
+TK-1017,C-214,A-11,phone,high,account_access,resolved,2024-11-07 09:15:00,2024-11-07 09:20:00,2024-11-07 11:00:00,5
+TK-1018,C-215,A-10,email,medium,technical_issue,resolved,2024-11-07 11:45:00,2024-11-07 12:30:00,2024-11-08 10:00:00,3
+TK-1019,C-216,A-12,chat,high,billing_dispute,resolved,2024-11-08 08:00:00,2024-11-08 08:03:00,2024-11-08 10:45:00,4
+TK-1020,C-201,A-13,phone,medium,technical_issue,resolved,2024-11-08 14:30:00,2024-11-08 14:35:00,2024-11-08 16:00:00,4
+TK-1021,C-217,A-14,email,low,general_inquiry,resolved,2024-11-09 10:00:00,2024-11-09 14:20:00,2024-11-09 14:45:00,4
+TK-1022,C-218,A-11,chat,critical,service_outage,resolved,2024-11-10 01:30:00,2024-11-10 01:34:00,2024-11-10 03:50:00,3
+TK-1023,C-219,A-10,phone,high,account_access,resolved,2024-11-10 09:00:00,2024-11-10 09:08:00,2024-11-10 10:30:00,5
+TK-1024,C-220,A-12,email,medium,billing_dispute,open,2024-11-10 11:00:00,2024-11-10 11:40:00,,
+TK-1025,C-203,A-13,chat,high,technical_issue,resolved,2024-11-11 08:15:00,2024-11-11 08:18:00,2024-11-11 09:45:00,4

@@ -1,0 +1,21 @@
+customer_id,customer_name,plan_tier,signup_date,monthly_revenue,is_active
+C-201,Acme Corp,enterprise,2023-01-15,4500.00,true
+C-202,BrightWave Inc,professional,2023-03-22,1200.00,true
+C-203,Coastal Dynamics,enterprise,2022-11-01,5200.00,true
+C-204,DataPulse LLC,starter,2024-02-10,299.00,true
+C-205,Evergreen Solutions,professional,2023-06-18,1200.00,true
+C-206,Forge Analytics,enterprise,2023-08-05,4500.00,true
+C-207,Granite Systems,professional,2024-01-12,1200.00,true
+C-208,Horizon Media,starter,2024-05-20,299.00,true
+C-209,Ironclad Security,starter,2024-07-01,299.00,true
+C-210,JetStream IO,professional,2023-09-14,1200.00,true
+C-211,Keystone Digital,enterprise,2022-06-30,5200.00,true
+C-212,Luminary Group,professional,2023-11-25,1200.00,true
+C-213,Mosaic Ventures,enterprise,2023-04-10,4500.00,true
+C-214,Northwind Labs,starter,2024-08-15,299.00,true
+C-215,Opal Technologies,professional,2024-03-01,1200.00,true
+C-216,Prism Collective,enterprise,2023-02-28,4500.00,true
+C-217,QuickScale AI,starter,2024-09-01,299.00,false
+C-218,Ridgeline Corp,professional,2023-07-20,1200.00,true
+C-219,Summit Partners,enterprise,2022-09-12,5200.00,true
+C-220,Tidewater Inc,professional,2024-04-05,1200.00,true

@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: int_tickets_with_sla
+    description: >
+      Tickets enriched with actual response/resolution times and SLA breach flags.
+      Each ticket is joined to its priority-level SLA targets.
+    columns:
+      - name: ticket_id
+        description: "Unique ticket identifier."
+        data_tests:
+          - unique
+          - not_null
+      - name: first_response_minutes
+        description: "Minutes between ticket creation and first agent response."
+      - name: resolution_minutes
+        description: "Minutes between ticket creation and resolution (null if open)."
+      - name: is_first_response_breached
+        description: "True if first response exceeded the SLA target."
+      - name: is_resolution_breached
+        description: "True if resolution exceeded the SLA target. Null if ticket is still open."
+
+  - name: int_customer_support_profile
+    description: >
+      Aggregated support statistics per customer. Includes ticket counts,
+      resolution rate, average satisfaction, and repeat-contact flag.
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier."
+        data_tests:
+          - unique
+          - not_null
+      - name: total_tickets
+        description: "Total number of tickets submitted by this customer."
+      - name: resolution_rate
+        description: "Fraction of tickets resolved (0.0 to 1.0)."
+      - name: is_repeat_contact
+        description: "True if customer has 3+ tickets (high-touch flag)."
